@@ -5,7 +5,7 @@
       <h1 class="title">
         Shortcut
       </h1>
-      <!-- <h2 class="subtitle">
+      <h2 class="subtitle">
         My best Nuxt.js project
       </h2>
       <div class="links">
@@ -19,7 +19,7 @@
           target="_blank"
           class="button--grey"
         >GitHub</a>
-      </div> -->
+      </div>
     </div>
   </section>
 </template>
