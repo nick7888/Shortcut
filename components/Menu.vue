@@ -1,7 +1,8 @@
 <template lang="pug">
-.menu
+#menu
   ul.menu-list
     li(v-for="link in links" :key="link.name") {{link.name}}
+  h1 arm
 </template>
 
 
@@ -23,7 +24,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.menu {
+#menu {
   color:#fff;
   .menu-list{
     list-style: none;

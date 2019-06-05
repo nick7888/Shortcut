@@ -14,9 +14,9 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
+$primary :#000;
 #top-menu {
-  background: #000;
-  min-height: 100%;
+  background: $primary;
 }
 </style>

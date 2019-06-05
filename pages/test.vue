@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  layout: 'topMenu',
+  layout: 'topMenu'
 }
 </script>
 
