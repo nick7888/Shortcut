@@ -1,6 +1,5 @@
 <template>
   <div id="top-menu">
-    top menu
     <menu-app/>
     <nuxt />
   </div>
@@ -18,6 +17,6 @@ export default {
 
 <style scoped lang="scss">
 #top-menu {
-  
+  background: #000;
 }
 </style>
