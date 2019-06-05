@@ -7,7 +7,6 @@
 
 <script>
 import MenuApp from '~/components/Menu'
-
 export default {
   components: {
     MenuApp
@@ -15,8 +14,9 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped >
 #top-menu {
   background: #000;
+  min-height: 100%;
 }
 </style>
