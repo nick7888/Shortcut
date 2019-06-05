@@ -1,9 +1,18 @@
 <template>
   <div>
+    <menu-app />
     <nuxt />
   </div>
 </template>
+<script>
+import MenuApp from '~/components/Menu'
 
+export default {
+  components: {
+    MenuApp
+  }
+}
+</script>
 <style>
 html {
   font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
