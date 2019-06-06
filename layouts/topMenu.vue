@@ -18,5 +18,7 @@ export default {
 $primary :#000;
 #top-menu {
   background: $primary;
+  position: absolute;
+  width: 100%;
 }
 </style>
