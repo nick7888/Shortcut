@@ -1,12 +1,20 @@
 <template>
   <div>
-    test page by arm
+    <div>
+      creators lists {{creators}}
+    </div>
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
-  layout: 'topMenu'
+  layout: 'topMenu',
+  computed: {
+    ...mapGetters({
+      creators:'creator/creators'
+    })
+  }
 }
 </script>
 

@@ -1,7 +1,8 @@
 <template lang="pug">
 #menu
   ul.menu-list
-    li(v-for="link in links" :key="link.name") {{link.name}}
+    li(v-for="link in links" :key="link.name") 
+      router-link(:to="{name:link.name}") {{link.name}}
 </template>
 
 
@@ -11,6 +12,7 @@ export default {
     return {
       links: [
         { name: "home" },
+        { name: "creator" },
         { name: "book" },
         { name: "exhibition" },
         { name: "book" },

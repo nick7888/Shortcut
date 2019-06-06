@@ -8,9 +8,10 @@
     li {
       float: left;
       margin-right: 60px;
-    }
-    &:after {
-      clear: both;
+      a {
+        color: $color-white;
+      }
     }
   }
 }
+

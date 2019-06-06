@@ -17,7 +17,8 @@
     "express": "^4.16.4",
     "firebase": "^6.1.0",
     "nuxt": "^2.4.0",
-    "vue": "^2.6.10"
+    "vue": "^2.6.10",
+    "vuex": "^3.1.1"
   },
   "devDependencies": {
     "coffee-loader": "^0.9.0",
