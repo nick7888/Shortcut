@@ -53,16 +53,30 @@
               </b-row>
             </b-form-group>
           </b-col>
+          <b-col col md="6">
+            <b-form-file
+              v-model="file"
+              :state="Boolean(file)"
+              placeholder="Choose a file..."
+              drop-placeholder="Drop file here..."
+            ></b-form-file>
+          </b-col>
         </b-row>
 
         <b-button type="submit" variant="primary">Submit</b-button>
         <b-button type="reset" variant="danger">Reset</b-button>
+
+        <b-button variant="primary" @click="writeToFirestore" :disabled="writeSuccessful">
+          <span v-if="!writeSuccessful">Write now</span>
+          <span v-else>Successful!</span>
+        </b-button>
       </b-form>
     </div>
   </section>
 </template>
 
 <script>
+import { fireDb } from "~/plugins/firebase.js";
 export default {
   data() {
     return {
@@ -80,13 +94,30 @@ export default {
         "Tomatoes",
         "Corn"
       ],
-      show: true
+      show: true,
+      file: null,
+      writeSuccessful: false
     };
   },
   methods: {
+    async writeToFirestore() {
+      const ref = fireDb.collection("users").doc("users");
+      // const document = {
+      //   text: "This is a test message."
+      // };
+      try {
+        await ref.set(this.form);
+      } catch (e) {
+        // TODO: error handling
+        console.error(e);
+      }
+      this.writeSuccessful = true;
+    },
     onSubmit(evt) {
       evt.preventDefault();
       alert(JSON.stringify(this.form));
+      console.log(this.users);
+      // this.users.push(this.form);
     },
     onReset(evt) {
       evt.preventDefault();
