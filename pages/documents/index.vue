@@ -1,33 +1,74 @@
 <template>
   <section class="container">
     <div>
-      <logo/>
-      <h1 class="title">Shortcut</h1>
-      <!-- <h2 class="subtitle">
-        My best Nuxt.js project
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >GitHub</a>
-      </div>-->
+      <div>
+        <h2>Read from Firestore.</h2>
+        <div>
+          <button @click="readFromFirestore" :disabled="readSuccessful">
+            <span v-if="!readSuccessful">Read now</span>
+            <span v-else>Successful!</span>
+          </button>
+          <p>{{text}}</p>
+        </div>
+      </div>
     </div>
   </section>
 </template>
 
 <script>
 import Logo from "~/components/Logo.vue";
-
+import { fireDb } from "~/plugins/firebase.js";
 export default {
   components: {
     Logo
+  },
+  data() {
+    return {
+      writeSuccessful: false,
+      readSuccessful: false,
+      text: "sd"
+    };
+  },
+  async asyncData({ app, params, error }) {
+    const ref = fireDb.collection("users").doc("users");
+    let snap;
+    try {
+      snap = await ref.get();
+      console.log(snap);
+    } catch (e) {
+      // TODO: error handling
+      console.error(e);
+    }
+    return {
+      text: snap.data().text
+    };
+  },
+  methods: {
+    async writeToFirestore() {
+      const ref = fireDb.collection("users").doc("users");
+      const document = {
+        text: "This is a test message."
+      };
+      try {
+        await ref.set(document);
+      } catch (e) {
+        // TODO: error handling
+        console.error(e);
+      }
+      this.writeSuccessful = true;
+    },
+    async readFromFirestore() {
+      const ref = fireDb.collection("users").doc("users");
+      let snap;
+      try {
+        snap = await ref.get();
+      } catch (e) {
+        // TODO: error handling
+        console.error(e);
+      }
+      this.text = snap.data().text;
+      this.readSuccessful = true;
+    }
   }
 };
 </script>
