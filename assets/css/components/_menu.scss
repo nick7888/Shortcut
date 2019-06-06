@@ -1,0 +1,20 @@
+#menu {
+  color: $color-white;
+  float: right;
+  .menu-list {
+    text-transform: uppercase;
+    padding: 40px 0;
+    list-style: none;
+    li {
+      float: left;
+      margin-right: 15px;
+    }
+    &:after {
+      clear: both;
+    }
+  }
+  &:after {
+    clear: both;
+  }
+  margin-right: 10%;
+}

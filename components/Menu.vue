@@ -21,26 +21,3 @@ export default {
   }
 };
 </script>
-
-<style scoped lang="scss">
-#menu {
-  color: #fff;
-  float: right;
-  .menu-list {
-    text-transform: uppercase;
-    padding: 40px 0;
-    list-style: none;
-    li {
-      float: left;
-      margin-right: 15px;
-    }
-    &:after {
-      clear: both;
-    }
-  }
-  &:after {
-    clear: both;
-  }
-  margin-right: 10%;
-}
-</style>

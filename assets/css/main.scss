@@ -1,9 +1,9 @@
-$primary :#000;
+// mixins
+@import 'mixins/fonts';
+@import 'mixins/colors';
 
-@font-face {
-  font-family: 'walkway_ultrabold';
-  src: url('../fonts/walkway_ultrabold-webfont.woff2') format('woff2'),
-       url('../fonts/walkway_ultrabold-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
+// layouts
+@import 'layouts/topMenu';
+
+//components
+@import 'components/menu';
