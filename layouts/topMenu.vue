@@ -1,6 +1,6 @@
 <template>
   <div id="top-menu">
-    <menu-app/>
+    <menu-app class="clearfix"/>
     <nuxt />
   </div>
 </template>
