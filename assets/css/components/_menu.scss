@@ -1,20 +1,16 @@
 #menu {
   color: $color-white;
-  float: right;
   .menu-list {
+    float: right;
     text-transform: uppercase;
     padding: 40px 0;
     list-style: none;
     li {
       float: left;
-      margin-right: 15px;
+      margin-right: 60px;
     }
     &:after {
       clear: both;
     }
   }
-  &:after {
-    clear: both;
-  }
-  margin-right: 10%;
 }
